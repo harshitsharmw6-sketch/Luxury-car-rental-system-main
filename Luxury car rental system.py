@@ -469,5 +469,235 @@ document.getElementById('booking-form').addEventListener('submit', function(e) {
     }
 });
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luxury Car Rental — Book Your Ride</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <i class="fas fa-car-side me-2 brand-icon"></i>
+        Luxury Car Rental
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navCollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#cars">Cars</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how">How it works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-outline-light ms-2" href="#cars">Book now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero bg-image text-white d-flex align-items-center">
+    <div class="container text-center py-6">
+      <h1 class="display-5 fw-bold">Drive the dream today.</h1>
+      <p class="lead mb-4">Premium cars, transparent pricing, white-glove service.</p>
+      <a href="#cars" class="btn btn-lg btn-primary me-2">Browse cars</a>
+      <a href="#how" class="btn btn-lg btn-outline-light">How it works</a>
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section id="how" class="py-5">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-md-4">
+          <div class="feature p-4 shadow-sm rounded">
+            <i class="fa-solid fa-calendar-check fa-2x mb-3 text-primary"></i>
+            <h5>Easy booking</h5>
+            <p class="mb-0">Reserve in seconds with our intuitive booking flow.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature p-4 shadow-sm rounded">
+            <i class="fa-solid fa-shield-halved fa-2x mb-3 text-primary"></i>
+            <h5>Fully insured</h5>
+            <p class="mb-0">Comprehensive coverage for all rentals and add-ons.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature p-4 shadow-sm rounded">
+            <i class="fa-solid fa-wrench fa-2x mb-3 text-primary"></i>
+            <h5>24/7 support</h5>
+            <p class="mb-0">White-glove concierge available around the clock.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARS GRID -->
+  <section id="cars" class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h3 mb-0">Available Cars</h2>
+        <div>
+          <small class="text-muted">Sort:</small>
+          <select id="sortSelect" class="form-select d-inline-block w-auto ms-2">
+            <option value="popular">Most popular</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="carsGrid" class="row g-4">
+        <!-- Car card example (repeat/inject for each car) -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://images.unsplash.com/photo-1542367597-59cc3f5b0f45?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top" alt="Mercedes S-Class">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Mercedes S-Class</h5>
+              <p class="card-text text-muted">Luxury sedan — 5 seats, automatic</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="h5 mb-0">$250</span>
+                  <small class="text-muted">/ day</small>
+                </div>
+                <div>
+                  <button class="btn btn-primary btn-book" data-name="Mercedes S-Class" data-price="250">Book</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top" alt="BMW 7 Series">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">BMW 7 Series</h5>
+              <p class="card-text text-muted">Executive performance — 5 seats</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="h5 mb-0">$230</span>
+                  <small class="text-muted">/ day</small>
+                </div>
+                <div>
+                  <button class="btn btn-primary btn-book" data-name="BMW 7 Series" data-price="230">Book</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://images.unsplash.com/photo-1603898037225-6b39b0b9e02a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="card-img-top" alt="Porsche Cayenne">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Porsche Cayenne</h5>
+              <p class="card-text text-muted">Sport SUV — 5 seats, AWD</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="h5 mb-0">$320</span>
+                  <small class="text-muted">/ day</small>
+                </div>
+                <div>
+                  <button class="btn btn-primary btn-book" data-name="Porsche Cayenne" data-price="320">Book</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more car cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Contact</h5>
+          <p class="text-muted">Email: hello@luxurycarrental.example • Phone: +1 (555) 123-4567</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-0">&copy; <span id="yr"></span> Luxury Car Rental. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <form id="bookingForm" class="modal-content needs-validation" novalidate>
+        <div class="modal-header">
+          <h5 class="modal-title">Book vehicle</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Car</label>
+            <input id="carName" class="form-control" readonly>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col">
+              <label class="form-label">Start</label>
+              <input id="startDate" type="date" class="form-control" required>
+            </div>
+            <div class="col">
+              <label class="form-label">End</label>
+              <input id="endDate" type="date" class="form-control" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Full name</label>
+            <input id="fullName" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input id="email" type="email" class="form-control" required>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <div>
+              <strong>Total:</strong> <span id="totalPrice" class="h5">$0</span>
+            </div>
+            <div>
+              <small class="text-muted" id="priceNote">Price per day: $0</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Confirm booking</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS + Popper (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+
+
 
 
