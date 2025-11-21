@@ -699,5 +699,10 @@ document.getElementById('booking-form').addEventListener('submit', function(e) {
 </html>
 
 
+/* styles.css - small theme polish */ :root{ --primary: #0d6efd; --hero-bg: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.35)), url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder') center/cover no-repeat; } body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #fff; color: #222; } /* Navbar brand */ .brand-icon { font-size: 1.25rem; color: #ffd700; } /* Hero */ .hero { min-height: 48vh; background: var(--hero-bg); color: white; position: relative; } .hero::after{ content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.55)); } .hero .container { position: relative; z-index: 2; } /* Feature cards */ .feature { background: white; border-radius: .6rem; } /* Card images */ .card-img-top { height: 200px; object-fit: cover; } /* Footer */ footer { font-size: .95rem; } /* Make modal inputs stand out */ .modal .form-control[readonly] { background-color: #f8f9fa; border: 1px solid #e9ecef; }
+
+
+
+
 
 
