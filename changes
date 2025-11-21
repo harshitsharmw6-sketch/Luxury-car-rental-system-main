@@ -1,0 +1,40 @@
+// Load car gallery dynamically
+const cars = [
+    { name: 'Lamborghini Huracan', image: 'https://images.unsplash.com/photo-1544829099-b9a0e3421cfb?w=400', price: '$500/day' },
+    { name: 'Ferrari 488', image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=400', price: '$600/day' },
+    { name: 'Rolls-Royce Ghost', image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400', price: '$800/day' },
+    { name: 'Bentley Continental', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400', price: '$700/day' }
+];
+
+const gallery = document.getElementById('car-gallery');
+cars.forEach(car => {
+    const card = `
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <img src="${car.image}" class="card-img-top" alt="${car.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${car.name}</h5>
+                    <p class="card-text">${car.price}</p>
+                    <a href="#booking" class="btn btn-gold">Book Now</a>
+                </div>
+            </div>
+        </div>
+    `;
+    gallery.innerHTML += card;
+});
+
+// Handle booking form submission
+document.getElementById('booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const car = document.getElementById('car').value;
+    const date = document.getElementById('date').value;
+    
+    if (name && email && car && date) {
+        document.getElementById('booking-message').innerHTML = `<div class="alert alert-success">Thank you, ${name}! Your booking for ${car} on ${date} has been submitted. We'll contact you at ${email} soon.</div>`;
+        this.reset();
+    } else {
+        document.getElementById('booking-message').innerHTML = `<div class="alert alert-danger">Please fill in all fields.</div>`;
+    }
+});
